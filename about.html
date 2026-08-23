@@ -12,9 +12,14 @@
       </nav><button class="burger" id="burger" aria-label="菜单">☰</button></div></header><div class="page-header reveal"><h1>公司介绍</h1><p>始于1969 · 源自德国 · 全球电镀化学品专家</p></div>
 <section class="reveal" id="about" style="padding-top:60px"><div class="container">
 <div class="about-grid">
-  <div class="about-visual">
-    <img src="images/about-town.jpg" alt="欧柏斯公司" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.2">
-    <div class="year-big"><div class="y">1969</div><div class="lab">Vaihingen / Enz · Germany</div></div>
+  <div class="about-visual" id="aboutSlider">
+        <img src="images/about-scene-1.jpg" alt="德国小镇河流风景" class="slide active" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1.5s">
+        <img src="images/about-scene-2.jpg" alt="德国小镇广场" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s">
+        <div class="dots" style="position:absolute;right:16px;bottom:12px;z-index:3;display:flex;gap:8px">
+          <span class="dot active" style="width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:#fff;cursor:pointer"></span>
+          <span class="dot" style="width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:transparent;cursor:pointer"></span>
+        </div>
+      </div><div class="lab">Vaihingen / Enz · Germany</div></div>
     <div class="badge"><b>全球营运总部</b><i>德国南部 Vaihingen / Enz 市</i>　·　有机表面活性剂起步，成长为全球著名电化学品跨国企业</div>
   </div>
   <div class="about-text">
@@ -75,5 +80,25 @@ document.querySelectorAll('#menu a').forEach(function(a){
     document.getElementById('menu').classList.remove('open');
   });
 });
+</script>
+<script>
+(function(){
+  var slides=document.querySelectorAll('#aboutSlider .slide');
+  var dots=document.querySelectorAll('#aboutSlider .dot');
+  var current=0;
+  function go(n){
+    slides[current].classList.remove('active');
+    slides[current].style.opacity='0';
+    dots[current].classList.remove('active');
+    dots[current].style.background='transparent';
+    current=(n+slides.length)%slides.length;
+    slides[current].classList.add('active');
+    slides[current].style.opacity='1';
+    dots[current].classList.add('active');
+    dots[current].style.background='#fff';
+  }
+  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);});});
+  setInterval(function(){go(current+1);},5000);
+})();
 </script>
 </body></html>
