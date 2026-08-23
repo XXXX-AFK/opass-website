@@ -109,13 +109,13 @@ section{padding:90px 0}
 .badge{position:absolute;bottom:24px;left:24px;right:24px;background:rgba(6,24,44,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:16px 20px;color:#cfd9e6;font-size:13px}
 .badge b{color:#fff;display:block;margin-bottom:4px;letter-spacing:1px;font-size:14px}
 .badge i{font-style:normal;color:var(--gold);font-weight:600}
-.about-text .kicker{font-size:12px;letter-spacing:5px;color:var(--navy-3);font-weight:700;margin-bottom:14px;text-transform:uppercase}
-.about-text h2{font-size:30px;color:var(--navy);font-weight:700;line-height:1.35;margin-bottom:24px;letter-spacing:.5px}
+.about-text .kicker{font-size:15px;letter-spacing:5px;color:var(--navy-3);font-weight:700;margin-bottom:14px;text-transform:uppercase}
+.about-text h2{font-size:36px;color:var(--navy);font-weight:700;line-height:1.35;margin-bottom:24px;letter-spacing:.5px}
 .about-text h2 .ac{color:var(--navy-3)}
-.about-text p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.about-text p{color:var(--muted);font-size:19px;margin-bottom:18px}
 .about-text p strong{color:var(--navy)}
 .about-list{list-style:none;margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.about-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text)}
+.about-list li{display:flex;gap:10px;align-items:flex-start;font-size:18px;color:var(--text)}
 .about-list li::before{content:"";flex:0 0 8px;height:8px;margin-top:8px;border-radius:2px;background:linear-gradient(135deg,var(--navy),var(--navy-3))}
 
 /* Honor */
