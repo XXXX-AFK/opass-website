@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>欧柏斯电化学有限公司（OPASS）- 全球电镀化学品专家</title><link rel="stylesheet" href="css/style.css">
+<style>
+.pd-img{width:100%;max-width:400px;border-radius:8px;border:1px solid #e3e8ef;margin:16px 0;object-fit:cover}
+.pd-thumb{width:120px;height:100px;border-radius:6px;object-fit:cover;border:1px solid #e3e8ef}
+.pd-gallery{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.pd-gallery img{width:120px;height:100px;border-radius:6px;object-fit:cover;border:1px solid #e3e8ef;transition:transform .2s}
+.pd-gallery img:hover{transform:scale(1.05);border-color:var(--navy-3)}
+.about-img{width:100%;border-radius:8px;margin:16px 0;border:1px solid #e3e8ef}
+.contact-banner{width:100%;max-width:600px;border-radius:12px;margin:20px auto;display:block;border:1px solid #e3e8ef}
+.news-thumb-img{width:100%;height:160px;object-fit:cover;border-radius:6px 6px 0 0}
+.pd-banner{width:100%;max-width:800px;border-radius:8px;margin:20px 0;border:1px solid #e3e8ef}
+
+/* === 全宽轮播 Banner === */
+/* 轮播图独立板块 — 容器匹配图片比例，不裁切 */
+.hero-banner{position:relative;width:100%;overflow:hidden;background:#06182c;aspect-ratio:939/243}
+.hero-banner .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out}
+.hero-banner .slide.active{opacity:1}
+.hero-banner .slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-banner .dots{position:absolute;right:16px;bottom:12px;z-index:3;display:flex;gap:8px}
+.hero-banner .dots .dot{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:transparent;cursor:pointer;transition:all .3s}
+.hero-banner .dots .dot.active{background:#fff;border-color:#fff;box-shadow:0 0 8px rgba(255,255,255,.5)}
+/* 文字介绍区（轮播下方） */
+.hero-intro{padding:50px 0;background:linear-gradient(135deg,#06182c 0%,#0a2540 40%,#12365c 100%);color:#fff;position:relative;overflow:hidden}
+.hero-intro::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-intro .container{position:relative;z-index:2}
+.hero-intro .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:4px;color:var(--silver);padding:7px 14px;border:1px solid rgba(201,204,210,.3);border-radius:30px;margin-bottom:24px;text-transform:uppercase}
+.hero-intro .eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.hero-intro h1{font-size:40px;line-height:1.25;font-weight:700;letter-spacing:1px;margin-bottom:18px}
+.hero-intro h1 .accent{background:linear-gradient(90deg,#e8eaee,#9fb0c4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-intro p.lead{font-size:16px;color:#cfd9e6;max-width:560px;margin-bottom:32px}
+.hero-intro .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-intro .hero-stats{display:flex;gap:38px;margin-top:40px;flex-wrap:wrap;padding-top:30px;border-top:1px solid rgba(255,255,255,.1)}
+.hero-intro .hero-stats .stat .n{font-size:30px;font-weight:700;color:#fff;letter-spacing:1px}
+.hero-intro .hero-stats .stat .n small{font-size:14px;color:var(--silver);font-weight:500;margin-left:2px}
+.hero-intro .hero-stats .stat .l{font-size:12px;color:#9fb0c4;letter-spacing:2px;margin-top:4px}
+
+/* === 视觉点缀 === */
+/* 产品卡片：金属边框光效 */
+.product-card{position:relative}
+.product-card::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,204,210,.4),transparent);opacity:0;transition:opacity .3s}
+.product-card:hover::after{opacity:1}
+/* 区块标题装饰线 */
+.sec-head h2::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:12px;vertical-align:middle}
+/* about 区背景金属纹理 */
+.about-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(185,154,94,.08),transparent 60%);pointer-events:none}
+
+/* === 移动端轮播 === */
+@media(max-width:780px){
+  .hero-banner{aspect-ratio:939/243}.hero-intro h1{font-size:26px}.hero-intro{padding:36px 0}.hero-intro .hero-stats{gap:20px}
+}
+</style>
+</head><body>
+<div class="topbar"><div class="wrap"><span>免费服务热线：86-0755-27819100　|　服务时间：周一至周六 9:00-18:00　|　邮箱：op@opass.cc</span><span><a href="http://en.opass.cc" data-zh="English" data-en="中文">English</a>　<a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></span></div></div>
+<header class="nav"><div class="nav-wrap"><a href="index.html" class="logo"><img src="images/opass-logo.png" alt="OPASS" style="height:30px;width:auto"><span style="color:#5d6b7a;font-size:13px;margin:0 10px;border-left:1px solid #5d6b7a;padding-left:10px">中国</span></a><nav class="menu" id="menu"><a href="index.html" class="active" data-zh="网站首页" data-en="Home">网站首页</a>
+<a href="products.html" data-zh="产品中心" data-en="Products">产品中心</a>
+<a href="about.html" data-zh="公司介绍" data-en="About">公司介绍</a>
+<a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a>
+<a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a>
+<a href="feedback.html" data-zh="客户反馈" data-en="Feedback">客户反馈</a>
+      <a href="http://en.opass.cc" class="nav-cta" data-zh="English" data-en="中文">English</a></nav><button class="burger" id="burger" aria-label="菜单">☰</button></div></header>
+
+<!-- 轮播图（独立板块） -->
+<section class="hero-banner" id="home">
+  <div class="slide active"><img src="images/opass-play-1.jpg" alt="欧柏斯电化学有限公司 德国技术 精湛体现"></div>
+  <div class="slide"><img src="images/opass-play-2.jpg" alt="欧柏斯招商代理"></div>
+  <div class="slide"><img src="images/opass-play-4.jpg" alt="欧柏斯电镀产品"></div>
+  <div class="slide"><img src="images/pro-banner.jpg" alt="OPASS 产品体系"></div>
+  <div class="slide"><img src="images/contact-3.jpg" alt="OPASS 用心服务"></div>
+  <div class="dots" id="dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+    <span class="dot" data-slide="4"></span>
+  </div>
+</section>
+
+<!-- 文字介绍区（轮播下方） -->
+<section class="hero-intro reveal">
+  <div class="container">
+    <span class="eyebrow"><span></span>Since 1969 · Made in Germany</span>
+    <h1>全球电镀化学品专家<br><span class="accent">始于1969 · 源自德国</span></h1>
+    <p class="lead">欧柏斯电化学有限公司（OPASS）从有机表面活性剂生产企业成长为全球著名电化学品跨国企业，酸性镀铜光亮剂和三价白铬／黑铬电镀工艺全球领先。</p>
+    <div class="hero-cta">
+      <a href="products.html" class="btn btn-primary">了解产品体系 →</a>
+      <a href="about.html" class="btn btn-ghost" data-zh="公司介绍" data-en="About">公司介绍</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="n">1969<small>年</small></div><div class="l">品牌创立</div></div>
+      <div class="stat"><div class="n">9<small>大</small></div><div class="l">产品工艺线</div></div>
+      <div class="stat"><div class="n">2<small>项</small></div><div class="l">全局领先工艺</div></div>
+      <div class="stat"><div class="n">2010<small>年</small></div><div class="l">十佳电镀品牌</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="reveal" id="products">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker">Products · 产品中心</div>
+      <h2>九大核心产品工艺</h2>
+      <p>覆盖镀铜、镀镍、镀铬等主流工艺，全球电镀行业的优选方案</p>
+    </div>
+    <div class="product-grid">
+      <a href="product-opass.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_ux5.jpg" alt="OPASS酸铜光亮剂" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">全球领先</span><h3>OPASS酸铜光亮剂</h3>
+        <p>OPASS UX酸铜光亮剂：创新一代超高浓缩合成配方，镀层填平高度达95%，超快出光，不易产生针孔，内应力低，延展性极强。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-triclos.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_triclos_1.jpg" alt="三价铬电镀工艺" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">全球领先</span><h3>三价铬电镀工艺</h3>
+        <p>LY-998高耐蚀白铬工艺与LY-N14三价黑铬工艺，环保不含六价铬，废水处理简单，色泽均匀美观。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-ct-rn.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_ct-rn.jpg" alt="CT-RN光亮氰化铜" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">经典工艺</span><h3>CT-RN光亮氰化铜电镀工艺</h3>
+        <p>铜镀层结晶细致、光亮均匀，电流密度范围宽阔，覆盖能力极佳，适用于钢铁、铜、青铜及锌合金压铸件。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-black-pearl.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_black-pearl.jpg" alt="BLACK PEARL黑镍" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">装饰镀</span><h3>BLACK PEARL仿古黑镍电镀工艺</h3>
+        <p>新型单一金属黑色镀层，专为仿古拉丝设计，色泽均匀易拉丝，黑度可调，适合复杂零件。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-ly-881.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_ly-881.jpg" alt="LY-881镀铜添加剂" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">镀铜系列</span><h3>LY-881镀铜添加剂</h3>
+        <p>创新超浓缩针对填平新配方，效果极佳。镀液容易控制，不易产生针孔、麻点，沉积速度快。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-ly-881.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_ly-883.jpg" alt="LY-883镀铜添加剂" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">镀铜系列</span><h3>LY-883镀铜添加剂</h3>
+        <p>与LY-881配套协同，进一步改善镀层均匀性、整平性及出光速度。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-pearl-nickel.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_pearl_1.jpg" alt="珍珠镍工艺" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">装饰镀</span><h3>珍珠镍工艺</h3>
+        <p>含LY-C、LY-F、LY-H、LY-M、LY-S五款产品，沙感明显、金属感强，长效稳定。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-pearl-nickel.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_desorb_1.jpg" alt="脱挂系列" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">辅助系列</span><h3>脱挂系列</h3>
+        <p>LY-N19电解脱挂水与SX-30A脱挂粉，中性无毒环保退镀剂，退镀速度快，不伤挂具。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+      <a href="product-nickel.html" class="product-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_nickel_1.jpg" alt="镍光剂" class="pd-thumb" style="margin-bottom:16px">
+        <span class="tag">镀镍系列</span><h3>镍光剂</h3>
+        <p>BE-88A挂镍光亮剂与DET-SA光亮滚镀镍，快速光亮、镀层洁白、填平力强。</p>
+        <div class="more">查看详情 <span>→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="reveal" id="about">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker">About OPASS · 公司介绍</div>
+      <h2>从德国南部走向全球的电化学品专家</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual">
+        <img src="images/icompany.jpg" alt="欧柏斯公司" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15">
+        <div class="year-big"><div class="y">1969</div><div class="lab">Vaihingen / Enz · Germany</div></div>
+        <div class="badge"><b>全球营运总部</b><i>德国南部 Vaihingen / Enz 市</i>　·　有机表面活性剂起步，成长为全球著名电化学品跨国企业</div>
+      </div>
+      <div class="about-text">
+        <div class="kicker">Brand Story · 品牌故事</div>
+        <h2>始于 <span class="ac">1969</span>，深耕电化学半世纪</h2>
+        <p>欧柏斯电化学有限公司（OPASS）品牌故事<strong>始于1969年</strong>，全球营运总部设在<strong>德国南部 Vaihingen / Enz 市</strong>。</p>
+        <p>从一家有机表面活性剂生产企业起步，OPASS 经过多年技术积累与全球布局，成长为<strong>全球著名电化学品跨国企业</strong>。核心工艺上，<strong>酸性镀铜光亮剂</strong>和<strong>三价白铬／黑铬电镀工艺</strong>处于<strong>全局领先</strong>地位。</p>
+        <p>2005年10月，OPASS 在中国深圳设立代表处，由<strong>深圳创力表面技术有限公司</strong>负责亚太地区品牌运营和产品推广，现已成为中国客户值得信赖的合作伙伴，是<strong>国内十佳外资品牌之一</strong>。</p>
+        <ul class="about-list">
+          <li>始于 1969 年</li><li>德国南部 Vaihingen / Enz 总部</li>
+          <li>有机表面活性剂起家</li><li>全球著名电化学品跨国企业</li>
+          <li>酸性镀铜光亮剂全球领先</li><li>三价白铬／黑铬工艺全球领先</li>
+          <li>2005年进入中国市场</li><li>国内十佳外资品牌之一</li>
+        </ul>
+        <div class="honor">
+          <div class="honor-medal">十佳<br>品牌</div>
+          <div class="honor-text"><b>2009年度国外十佳电镀品牌</b><small>2010年4月颁发　·　大陆执行董事巫福强赴上海领奖</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="reveal" id="news">
+  <div class="container">
+    <div class="sec-head">
+      <div class="kicker">News · 新闻动态</div>
+      <h2>行业资讯与公司新闻</h2>
+    </div>
+    <div class="news-grid">
+      <a href="news.html" class="news-card" style="text-decoration:none;color:inherit">
+        <img src="images/thumb_news_award.jpg" alt="十佳电镀品牌" class="news-thumb-img">
+        <div class="news-body"><h3>OPASS荣获2009年度国外十佳电镀品牌称号</h3><p>2010年4月22日OPASS电化学有限公司荣获2009年度国外十佳电镀品牌称号，大陆执行董事巫福强先生前往上海参加颁奖典礼。</p><div class="news-more">阅读全文 <span>→</span></div></div>
+      </a>
+      <a href="news.html" class="news-card" style="text-decoration:none;color:inherit">
+        <div class="news-thumb"><span class="date-tag">2011-05-11</span><div class="nlabel">表面处理展</div></div>
+        <div class="news-body"><h3>广州国际表面处理展盛大开幕</h3><p>第九届广州国际表面处理、电镀、涂装展览会(SF EXPO 2011)于2011年5月11-13日在广州国际会议展览中心隆重举行。</p><div class="news-more">阅读全文 <span>→</span></div></div>
+      </a>
+      <a href="news.html" class="news-card" style="text-decoration:none;color:inherit">
+        <div class="news-thumb"><span class="date-tag">2011-05-11</span><div class="nlabel">电镀业防控</div></div>
+        <div class="news-body"><h3>国务院：2011年电镀业需重点防控重金属污染</h3><p>国务院九部门联合召开2011环保专项行动电视电话会议，电镀行业需重点防控重金属污染。</p><div class="news-more">阅读全文 <span>→</span></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact strip -->
+<div class="reveal contact-strip" id="contact">
+  <div class="contact-wrap">
+    <div><h3>需要专业的电镀化学品方案？</h3><p>联系 OPASS，获取 OPASS 酸铜光亮剂、三价铬电镀工艺等产品的技术与服务支持。</p></div>
+    <div class="contact-items">
+      <div class="ci"><div class="ci-ic">@</div><div><small>免费服务热线</small><b>86-0755-27819100</b></div></div>
+      <div class="ci"><div class="ci-ic">⏱</div><div><small>服务时间</small><b>周一至周六 9:00-18:00</b></div></div>
+      <div class="ci"><div class="ci-ic">✉</div><div><small>邮箱</small><b>op@opass.cc</b></div></div>
+    </div>
+  </div>
+</div>
+<footer><div class="foot-wrap"><div class="foot-top"><div class="foot-brand"><div class="logo"><img src="images/opass-logo.png" alt="OPASS" style="height:28px;width:auto;filter:brightness(2)"><span style="color:#5d6b7a;font-size:12px;margin-left:8px">中国</span></div><p>欧柏斯电化学有限公司（OPASS），始于 1969 年，全球营运总部设于德国南部 Vaihingen / Enz 市，全球著名电化学品跨国企业。</p></div><div class="foot-col"><h4>导航</h4><ul><li><a href="index.html" data-zh="网站首页" data-en="Home">网站首页</a></li><li><a href="products.html" data-zh="产品中心" data-en="Products">产品中心</a></li><li><a href="about.html" data-zh="公司介绍" data-en="About">公司介绍</a></li><li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li><li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li><li><a href="feedback.html" data-zh="客户反馈" data-en="Feedback">客户反馈</a></li></ul></div><div class="foot-col"><h4>产品工艺</h4><ul><li><a href="product-opass.html">OPASS酸铜光亮剂</a></li><li><a href="product-triclos.html">三价铬电镀工艺</a></li><li><a href="product-ct-rn.html">CT-RN光亮氰化铜</a></li><li><a href="product-black-pearl.html">BLACK PEARL黑镍</a></li><li><a href="product-ly-881.html">LY-881/883镀铜添加剂</a></li><li><a href="product-pearl-nickel.html">珍珠镍/脱挂/镍光剂</a></li></ul></div><div class="foot-col"><h4>联系方式</h4><ul class="foot-contact"><li>📞 <span><b>免费服务热线</b><br>86-0755-27819100</span></li><li>🕘 <span><b>服务时间</b><br>周一至周六 9:00-18:00</span></li><li>✉ <span><b>邮箱</b><br>op@opass.cc</span></li></ul></div></div><div class="foot-bottom"><span>Copyright © 2010 opass.cc All Rights Reserved　·　<a href="sitemap.html">网站地图</a>　|　<a href="privacy.html">隐私声明</a>　|　<a href="law.html">法律声明</a></span><span>全球营运总部：德国南部 Vaihingen / Enz 市　|　<a href="http://en.opass.cc" target="_blank" data-zh="English" data-en="中文">English</a></span></div></div></footer>
+<script>
+// ===== 入场动画：IntersectionObserver =====
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+
+// ===== 中英文切换 =====
+(function(){
+  var enMode = false;
+  var enBtns = document.querySelectorAll('a[href*="en.opass.cc"], a.nav-cta');
+  enBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      enMode = !enMode;
+      document.documentElement.lang = enMode ? 'en' : 'zh-CN';
+      // 切换所有带 data-zh / data-en 的元素
+      document.querySelectorAll('[data-zh]').forEach(function(el){
+        el.textContent = enMode ? (el.getAttribute('data-en')||el.textContent) : el.getAttribute('data-zh');
+      });
+      // 切换按钮文字
+      enBtns.forEach(function(b){ b.textContent = enMode ? '中文' : 'English'; });
+    });
+  });
+})();
+
+// ===== 移动端菜单 =====
+document.getElementById('burger')&&document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('open');
+});
+document.querySelectorAll('#menu a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('menu').classList.remove('open');
+  });
+});
+</script>
+<script>
+// ===== 入场动画：IntersectionObserver =====
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+})();
+
+// ===== 中英文切换 =====
+(function(){
+  var enMode = false;
+  var enBtns = document.querySelectorAll('a[href*="en.opass.cc"], a.nav-cta');
+  enBtns.forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      enMode = !enMode;
+      document.documentElement.lang = enMode ? 'en' : 'zh-CN';
+      // 切换所有带 data-zh / data-en 的元素
+      document.querySelectorAll('[data-zh]').forEach(function(el){
+        el.textContent = enMode ? (el.getAttribute('data-en')||el.textContent) : el.getAttribute('data-zh');
+      });
+      // 切换按钮文字
+      enBtns.forEach(function(b){ b.textContent = enMode ? '中文' : 'English'; });
+    });
+  });
+})();
+
+// ===== 移动端菜单 =====
+document.getElementById('burger')&&document.getElementById('burger').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('open');
+});
+document.querySelectorAll('#menu a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('menu').classList.remove('open');
+  });
+});
+</script>
+<script>
+// 轮播：圆点导航 + 自动切换
+(function(){
+  var slides=document.querySelectorAll('.hero-banner .slide');
+  var dots=document.querySelectorAll('.hero-banner .dot');
+  var current=0;
+  function go(n){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current=(n+slides.length)%slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  dots.forEach(function(d){
+    d.addEventListener('click',function(){go(parseInt(this.dataset.slide));});
+  });
+  setInterval(function(){go(current+1);},5000);
+})();
+</script>
+</body>
+</html>
