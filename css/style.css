@@ -17,7 +17,7 @@ img{max-width:100%;display:block}
 .topbar a{color:#cfd9e6}.topbar a:hover{color:#fff}
 
 /* Nav */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(10,37,64,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);box-shadow:0 2px 20px rgba(0,0,0,.15)}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(10,37,64,.96);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.15)}
 .nav-wrap{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#e8eaee 0%,#9fb0c4 50%,#5d6b7a 100%);display:flex;align-items:center;justify-content:center;color:#0a2540;font-weight:800;font-size:18px;letter-spacing:-1px;box-shadow:0 4px 14px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.6)}
@@ -307,13 +307,3 @@ footer{background:#040f1c;color:#9fb0c4;padding:50px 0 26px;font-size:13px}
 }
 
 
-/* --- 防止导航栏在转场时产生白线残留 --- */
-header.nav {
-  view-transition-name: opass-nav;
-}
-::view-transition-old(opass-nav) {
-  animation: none;
-}
-::view-transition-new(opass-nav) {
-  animation: none;
-}
