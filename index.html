@@ -48,6 +48,10 @@
 @media(max-width:780px){
   .hero-banner{aspect-ratio:939/243}.hero-intro h1{font-size:26px}.hero-intro{padding:36px 0}.hero-intro .hero-stats{gap:20px}
 }
+
+.advantages-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(max-width:780px){.advantages-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.advantages-grid{grid-template-columns:1fr}}
 </style>
 </head><body>
 <div class="topbar"><div class="wrap"><span>免费服务热线：86-0755-27819100　|　服务时间：周一至周六 9:00-18:00　|　邮箱：op@opass.cc</span><span><a href="http://en.opass.cc" data-zh="English" data-en="中文">English</a>　<a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></span></div></div>
@@ -102,7 +106,7 @@
       <h2>为什么选择 OPASS</h2>
       <p style="font-size:17px">半世纪德国技术沉淀，全球电镀行业的值得信赖合作伙伴</p>
     </div>
-    <div class="product-grid" style="grid-template-columns:repeat(2,1fr);gap:28px">
+    <div class="product-grid" class="advantages-grid">
       <div class="product-card" style="padding:36px 32px;cursor:default">
         <div class="product-icon" style="width:64px;height:64px;font-size:26px;margin:0 auto 24px">★</div>
         <h3 style="font-size:22px;text-align:center;margin-bottom:16px">全球领先工艺</h3>
